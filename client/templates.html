@@ -1,0 +1,56 @@
+<template name="header">
+	<header>
+		{{>adminNav title=title}}
+	</header>
+</template>
+
+
+<template name="adminNav">
+	<nav class="top-nav">
+		<div class="nav-wrapper"><a class="page-title"><span style="font-size:2em;font-style:bold;padding-left:15px" class="center">{{title}}</span></a>
+			<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+			<ul id="nav-mobile-right" class="right hide-on-med-and-down">
+				<li><a href="javascript:Router.go('/');"><i class="material-icons">home</i></a></li>
+			</ul>
+		</div>
+	</nav>
+	<ul id="nav-mobile" class="side-nav custom-side-nav fixed">
+		<li class="grey darken-4 brand-logo">
+			<div class="user">
+				<div class="chip grey darken-3 white-text">
+					Administrator
+				</div>
+			</div>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.home'}}active{{/if}}">
+			<a href="{{pathFor 'admin.dashboard'}}">Dashboard</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.switchboard'}}active{{/if}}">
+			<a href="{{pathFor 'admin.switchboard'}}">Switchboard</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.users'}}active{{/if}}">
+			<a href="{{pathFor 'admin.users'}}">Users</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.events'}}active{{/if}}">
+			<a href="{{pathFor 'admin.events'}}">Events</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.activities'}}active{{/if}}">
+			<a href="{{pathFor 'admin.activities'}}">Activities</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.appearance'}}active{{/if}}">
+			<a href="{{pathFor 'admin.appearance'}}">Appearance</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.configuration'}}active{{/if}}">
+			<a href="{{pathFor 'admin.configuration'}}">Configuration</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.blog'}}active{{/if}}">
+			<a href="{{pathFor 'admin.blog'}}">Blog</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.media'}}active{{/if}}">
+			<a href="{{pathFor 'admin.media'}}">Media</a>
+		</li>
+		<li class="{{#if currentRouteIs 'admin.finance'}}active{{/if}}">
+			<a href="{{pathFor 'admin.finance'}}">Finance</a>
+		</li>
+	</ul>
+</template>
